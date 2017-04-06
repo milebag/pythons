@@ -5,7 +5,9 @@ import threading
 from multiprocessing import Process
 class Proxy:
     def __init__(self,soc):
+        print("init")
         self.client,_=soc.accept()
+        print("accept")
         self.target=None
         self.request_url=None
         self.BUFSIZE=4096

@@ -17,7 +17,7 @@ class Proxy:
             return None
         cn=request.find('\n')
         firstLine=request[:cn]
-        print firstLine[:len(firstLine)-9]
+        print (firstLine[:len(firstLine)-9])
         line=firstLine.split()
         self.method=line[0]
         self.targetHost=line[1]
@@ -29,8 +29,7 @@ class Proxy:
         targetAddr=self.getTargetInfo(tmp[2])
         try:
             (fam,_,_,_,addr)=socket.getaddrinfo(targetAddr[0],targetAddr[1])[0]
-        except Exception as e:
-            print e
+        except:
             return
         self.target=socket.socket(fam)
         self.target.connect(addr)

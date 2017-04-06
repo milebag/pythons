@@ -73,7 +73,7 @@ class Proxy:
             site=host
             port=80
         print("host",site,port)
-        return "www.baidu.com",port
+        return "www.google.com",port
 if __name__=='__main__':      
     host = '' 
     port = 8080

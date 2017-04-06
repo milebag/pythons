@@ -9,8 +9,8 @@ print ('Socket created')
  
 try:
     s.bind((HOST, PORT))
-except socket.error , msg:
-    print ('Bind failed. Error Code : ' + str(msg[0]) + ' Message ' + msg[1])
+except:
+    print ('Bind failed. ')
     sys.exit()
      
 print ('Socket bind complete')

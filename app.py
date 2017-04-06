@@ -81,6 +81,8 @@ if __name__=='__main__':
     server.bind((host,port)) 
     server.listen(5) 
     while True:
-        threading.Thread(Proxy(server).run,()).start()
+        proxy =Proxy(server)
+        t=threading.Thread(target = proxy.run,args=())
+        t.start()
         # p=Process(target=Proxy(server).run, args=()) #多进程
         # p.start()

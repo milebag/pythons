@@ -1,6 +1,6 @@
 import socket  # 导入socket模块
 sk = socket.socket()  # 创建socket对象
-sk.bind(("127.0.0.1", 8888))  # 绑定端口,“127.0.0.1”代表本机地址，8888为设置链接的端口地址
+sk.bind(("", 80))  # 绑定端口,“127.0.0.1”代表本机地址，8888为设置链接的端口地址
 sk.listen(5)  # 设置监听，最多可有5个客户端进行排队
 conn, addr = sk.accept()  # 阻塞状态，被动等待客户端的连接
 print(conn)  # conn可以理解客户端的socket对象

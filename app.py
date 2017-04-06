@@ -72,10 +72,10 @@ class Proxy:
         else:
             site=host
             port=80
-        return site,port
+        return "www.baidu.com",port
 if __name__=='__main__':      
-    host = '127.0.0.1' 
-    port = 8083
+    host = '' 
+    port = 8080
     backlog = 5 
     server = socket.socket(socket.AF_INET,socket.SOCK_STREAM) 
     server.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1)

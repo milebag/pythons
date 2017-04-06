@@ -13,6 +13,7 @@ class Proxy:
         self.targetHost=None
     def getClientRequest(self):
         request=self.client.recv(self.BUFSIZE)
+        print(request)
         if not request:
             return None
         cn=request.find('\n')
@@ -71,6 +72,7 @@ class Proxy:
         else:
             site=host
             port=80
+        print("host",site,port)
         return "www.baidu.com",port
 if __name__=='__main__':      
     host = '' 

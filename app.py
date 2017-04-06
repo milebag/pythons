@@ -1,7 +1,7 @@
 #-*- coding: UTF-8 -*-
 import socket,select
 import sys
-import thread
+import threading
 from multiprocessing import Process
 class Proxy:
     def __init__(self,soc):
@@ -81,6 +81,6 @@ if __name__=='__main__':
     server.bind((host,port)) 
     server.listen(5) 
     while True:
-        thread.start_new_thread(Proxy(server).run,())
+        threading.Thread(Proxy(server).run,()).start()
         # p=Process(target=Proxy(server).run, args=()) #多进程
         # p.start()
